@@ -1,0 +1,23 @@
+ <div class="container">
+	<h1>Userinfo</h1>
+
+		<%= form_for @user do |f| %>
+		 <div class="form-group">
+		    <div class="field">
+		  	 <%= f.label :Name %>
+		 	 <%= f.text_field :name %>
+		 	</div>
+		 	<div class="field">
+		 	 <%= f.label :Image %>
+			 <%= f.attachment_field :profile_image %>
+			</div>
+			<div class="field">
+			 <%= f.label :Introduction %>
+			 <%= f.text_area :introduction %>
+			</div>
+			<div class="action">
+			 <%= f.submit %>
+			</div>
+		</div>
+		<% end %>
+</div>
