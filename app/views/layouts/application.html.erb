@@ -10,21 +10,22 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar navbar-inverse">
-        <div class="container">
-          <h3 class="navbar-text navbar-left">Bookers</h3>
-          <div id="slidemenu">
-            <ul class="nav navbar-nav navbar-right">
+    <header class="navbar navbar-inverse">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left ">
+          <h1>Bookers</h1>
+        </nav>
+        <div style="margin-top:30px;">
+            <ul class="nav navbar-nav navbar-right center-block ">
              <% if user_signed_in? %>
                 <li class="">
-                 <span class="glyphicon glyphicon-home" aria-hidden="true">　<%= link_to "Home",user_path(current_user.id) %></span>
+                 <span class="glyphicon glyphicon-home" aria-hidden="true">　<%= link_to "Home ",user_path(current_user.id) %></span>
                 </li>
                 <li class="">
-                  <span class="glyphicon glyphicon-user" aria-hidden="true">　<%= link_to "User", users_path %></span>
+                  <span class="glyphicon glyphicon-user" aria-hidden="true">　<%= link_to "Users", users_path %></span>
                 </li>
                <li class="">
-                 <span class="glyphicon glyphicon-book" aria-hidden="true">　<%= link_to "Book", books_path %></span>
+                 <span class="glyphicon glyphicon-book" aria-hidden="true">　<%= link_to "Books", books_path %></span>
                </li>
                 <li class="">
                    <span class="glyphicon glyphicon-log-out" aria-hidden="true">　<%= link_to "logout", destroy_user_session_path, method: :delete %></span>
@@ -34,7 +35,7 @@
                   <span class="glyphicon glyphicon-home" aria-hidden="true">　<%=link_to "Home", root_path %></span>
                 </li>
                 <li class="">
-                  <span class="glyphicon glyphicon-link" aria-hidden="true">　<%= link_to "About"%></span>
+                  <span class="glyphicon glyphicon-link" aria-hidden="true">　<%= link_to "About", home_about_path %></span>
                 </li>
                 <li class="">
                   <span class="glyphicon glyphicon-edit" aria-hidden="true">　<%= link_to "sign up", new_user_registration_path %></span>
@@ -45,8 +46,9 @@
               <% end %>
             </ul>
           </div>
-        </div>
-      </nav>
+          </div>>
+         </div>
+      </header>
       <div class="container">
         <% if flash[:notice] %>
           <div class="notification is-info">
@@ -60,7 +62,9 @@
             </div>
          <% end %>
       </div>
-    </header>
+
+
+
 
     <%= yield %>
 

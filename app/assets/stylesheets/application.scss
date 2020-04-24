@@ -18,28 +18,28 @@
 
 
 
-.col-lg-3 th{
+.col-xs-3 th{
 	padding-bottom: 5px;
 	padding-right: 5px;
 	padding-left: 5px;
 	border-top: 1px solid #ddd;
 }
 
-.col-lg-3 table {
+.col-xs-3 table {
     width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
 }
 
-.col-lg-9 table {
+.col-xs-9 table {
     width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
 }
-.col-lg-9 th{
+.col-xs-9 th{
 	border-bottom: 2px solid #ddd
 }
-.col-lg-9 td{
+.col-xs-9 td{
 	padding-top: 5px;
 	padding-bottom: 5px;
 	border-top: 1px solid #ddd
@@ -53,4 +53,18 @@
 
 .btn-success{
 	color: #808080;
+}
+.btn-danger{
+	color: #808080;
+}
+.actions{
+	margin-top: 10px;
+}
+.error_explanation{
+	background-color: red;
+}
+.alert-errors{
+	color: red;
+	background-color: white;
+	border: none;
 }

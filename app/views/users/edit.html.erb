@@ -1,5 +1,15 @@
  <div class="container">
-	<h1>Userinfo</h1>
+ 	<% if @user.errors.any? %>
+ <div class = "alert-errors alert-warning">
+ 	<h4><%= @user.errors.count %>errors prohibited this obj from being saved:</h4>
+ 	<ul>
+ 		<% @user.errors.full_messages.each do |message| %>
+ 		<li><%= message %></li>
+ 		<% end %>
+ 	</ul>
+ </div>
+<% end %>
+	<h1>User info</h1>
 
 		<%= form_for @user do |f| %>
 		 <div class="form-group">
