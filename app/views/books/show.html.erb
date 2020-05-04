@@ -54,8 +54,16 @@
                      <td><%= link_to "Destroy", book_path,method: :delete,class: "btn btn-danger ","data-confirm"=> "本当に消しますか?"%></td>
                      <% end %>
     	  			</tr>
-    	 		 </tbody>
+              </tbody>
             </table>
     	</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-8">
+            <%= form_for [@book1, @book_comment] do |f| %>
+            <%= f.text_area :comment, class:'form-control' %>
+            <%= f.submit %>
+            <% end %>
+        </div>
     </div>
 </div>
