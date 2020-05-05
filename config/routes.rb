@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root 'homes#index'
   get "home/about" => "homes#about"
   resources :users, only: [:index, :show, :edit, :update]
-  resources :books
-  resources :book_comments, only: [:create, :destroy]
+  resources :books do
+	  resources :book_comments, only: [:create, :destroy]
+	  resource :favorites, only: [:create, :destroy]
+	end
 end
