@@ -1,0 +1,14 @@
+<h2>New book</h2>
+		<%= form_for(book) do |f| %>
+			<div class="form-group row ">
+				<h4>Title</h4>
+				<%= f.text_field :title, class:'form-control' %>
+			</div>
+			<div class="form-group row ">
+				<h4>Opinion</h4>
+				<%= f.text_area :body, class:'form-control' %>
+			</div>
+			<div class="action row ">
+				<%= f.submit(class:'btn btn-primary btn-block') %>
+			</div>
+		<% end %>

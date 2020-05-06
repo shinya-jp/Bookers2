@@ -10,7 +10,10 @@
 		 		</ul>
 		 	</div>
 		<% end %>
-    	<%= render 'users/info',users:@user %>
+		<div class="col-xs-3">
+	    	<%= render 'users/info',user: current_user %>
+	    	<%= render 'form', book: @book %>
+	    </div>
     	<div class="col-xs-9">
 			<h1>Books</h1>
 		<table>
@@ -43,7 +46,7 @@
 						         </td>
 						<% else %>
 						    <td><%= link_to book_favorites_path(book), method: :post do %>
-						        <span class="glyphicon glyphicon-heart "></span><%= book.favorites.count %>
+						        <span class="glyphicon glyphicon-heart-empty "></span><%= book.favorites.count %>
 						  <% end %>
 						  </td>
 						<% end %>

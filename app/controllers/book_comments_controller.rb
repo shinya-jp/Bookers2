@@ -4,6 +4,7 @@ class BookCommentsController < ApplicationController
 		comment = current_user.book_comments.new(book_comment_params)
 		comment.book_id =book.id
 			if comment.save
+				flash[:notice] = "Comment was successfully created."
 			redirect_back(fallback_location: root_path)
 		else
 			redirect_back(fallback_location: root_path)

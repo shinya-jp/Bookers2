@@ -15,11 +15,18 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+a {
+  color: #000;
 
-a{
-	color: gray;
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
 }
-
 
 .col-xs-3 th{
 	padding-bottom: 5px;

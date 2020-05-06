@@ -1,42 +1,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-3">
- <h2>User info</h2>
- <%= attachment_image_tag @user,:profile_image, :fill, 100, 100,format:'jpeg', fallback: "no_image.jpg" %>
-
-		<table>
-		<thead>
-			<tr>
-				<th>name</th>
-				<th><%= @user.name %></th>
-			</tr>
-		    <tr>
-		    	<th>intoroduction</th>
-			    <th><%= @user.introduction %></th>
-			</tr>
-		</thead>
-		</table>
-		<%= link_to edit_user_path(@user.id), class: "btn btn-default btn-block" do %>
-
-
-		<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-	<% end %>
-	<h2>New book</h2>
-		<%= form_for @book do |f| %>
-			<div class="form-group row ">
-				<h4>Title</h4>
-				<%= f.text_field :title, class:'form-control' %>
-			</div>
-			<div class="form-group row ">
-				<h4>Opinion</h4>
-				<%= f.text_area :body, class:'form-control' %>
-			</div>
-			<div class="action row ">
-				<%= f.submit(class:'btn btn-primary btn-block') %>
-			</div>
-		<% end %>
-
-</div>
+	 		<%= render 'info', user: @user,now: ''%>
+			<%= render 'books/form', book: @book %>
+		</div>
 	<div class="col-xs-9">
 <h1>Books</h1>
 
@@ -62,7 +29,7 @@
 			　<%= book.title %></td>
 			　<% end %></td>
 	  	 <td><%= book.body %></td>
-	  	 <td>コメント数: <%= @book.book_comments.count %></td>
+	  	 <td>コメント数: <%= book.book_comments.count %></td>
 	     </tr>
 	     <% end %>
  </tbody>

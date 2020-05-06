@@ -6,7 +6,7 @@
          </td>
 <% else %>
     <td><%= link_to book_favorites_path(book), method: :post do %>
-        <span class="glyphicon glyphicon-heart "></span><%= book.favorites.count %>
+        <span class="glyphicon glyphicon-heart-empty "></span><%= book.favorites.count %>
   <% end %>
   </td>
 <% end %>
