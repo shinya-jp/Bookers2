@@ -1,5 +1,8 @@
 <div id="userlist" class="container">
 <h2>Follow Users</h2>
-<%= render 'users/users_list', users: @users %>
-
+	<% if @users.count > 0 %>
+		<%= render 'users/users_list', users: @users %>
+	<% else %>
+		<p>ユーザーはいません</p>
+	<% end %>
 </div>
