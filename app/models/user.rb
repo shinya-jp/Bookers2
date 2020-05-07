@@ -30,6 +30,22 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
+# 検索機能
+  def User.search(search, user_or_book, how_search)
+    if user_or_book == "user"
+      if how_search == "partical"
+        User.where(['name LIKE ?', "%#{search}%"])
+      elsif how_search == "backward"
+        User.where(['name LIKE ?', "%#{search}"])
+      elsif how_search == "forward"
+        User.where(['name LIKE ?', "#{search}%"])
+      elsif how_search == "match"
+        User.where(['name LIKE ?', "#{search}"])
+      else
+        User.all
+       end
+    end
+  end
 #バリデーション
  validates :name, presence: true, length: {in: 2..20}
  validates :introduction, length:{ maximum: 50}
