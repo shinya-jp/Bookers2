@@ -8,10 +8,10 @@
         <div class="col-xs-9">
             <% if @user_or_book == "user"%>
                 <h1>Users</h1>
-                <%= render 'users/users_list', users: @users %>
+                <%= render 'users/index', users: @users %>
             <% elsif @user_or_book == "book" %>
                 <h1>Books</h1>
-                <%= render 'books/books_list', books: @books %>
+                <%= render 'books/index', books: @books %>
             <% else %>
             <% end %>
         </div>

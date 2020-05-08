@@ -1,5 +1,0 @@
-<% @user.following_user.where.not(id: current_user.id).each do |user| %>
-
-<%= @user.name %>
-
-<% end %>

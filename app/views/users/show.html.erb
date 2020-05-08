@@ -4,37 +4,10 @@
 	 		<%= render 'info', user: @user,now: ''%>
 			<%= render 'books/form', book: @book %>
 		</div>
-	<div class="col-xs-9">
-<h1>Books</h1>
-
- <table>
-	<thead>
-		<tr>
-			<th> </th>
-			<th>Title</th>
-			<th>Opinion</th>
-		</tr>
-	</thead>
-
-
- <tbody>
-	     <% @user.books.each do |book| %>
-	     <tr>
-
-	  	 <td>
-	  	  <%= link_to user_path(book.user) do %>
-		 <%= attachment_image_tag book.user,:profile_image, :fill, 50, 50,format:'jpeg', fallback: "no_image.jpg",size:'50x50' %>
-		 <% end %>
-	  	 <td><%= link_to book_path(book.id) do %>
-			　<%= book.title %></td>
-			　<% end %></td>
-	  	 <td><%= book.body %></td>
-	  	 <td>コメント数: <%= book.book_comments.count %></td>
-	     </tr>
-	     <% end %>
- </tbody>
-</table>
-</div>
-</div>
+		<div class="col-xs-9">
+			<h1>Books</h1>
+			<%= render 'books/index' , books: @books %>
+		</div>
+	</div>
 </div>
 
