@@ -20,11 +20,15 @@
                             <% end %></td>
     			   	 <td><%= @book.body %></td>
                      <!-- いいね機能 -->
-                     <td id="favorite">
+                     <td id="favorite_<%= @book.id %>">
                      <%= render partial:'favorites/favorite', locals: {book: @book}  %>
                      </td>
-                     <!-- いいね機能 -->
-                     <td>コメント数: <%= @book.book_comments.count %></td>
+                     <!-- end -->
+                     <!-- コメント数 -->
+                     <td id="comment_count">
+                        <%= render partial: 'book_comments/comment_count', locals: {book: @book} %>
+                    </td>
+                    <!-- end -->
                      <% if @book.user.id == current_user.id %>
                      <td><%= link_to "Edit",edit_book_path(@book), class: "btn btn-success" %></td>
                      <td><%= link_to "Destroy", book_path,method: :delete,class: "btn btn-danger ","data-confirm"=> "本当に消しますか?"%></td>

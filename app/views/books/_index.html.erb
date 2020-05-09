@@ -18,10 +18,12 @@
 			  	 <% end %>
 			<td><%= book.body %></td>
 			<!-- いいね -->
-			<td id="favorite">
+			<td id="favorite_<%= book.id %>">
 			<%= render partial: 'favorites/favorite', locals: {book: book} %>
 			</td>
-			<td>コメント数: <%= book.book_comments.count %></td>
+			<td id="comment_count">
+				<%= render 'book_comments/comment_count', book: book %>
+			</td>
 	  	</tr>
 	<% end %>
 </tbody>

@@ -1,2 +1,3 @@
+$("#comment_count").html("<%= j(render 'comment_count',{book: @book}) %>")
 $("#comments_area").html("<%= j(render 'index',{book_comments: @book_comment.book.book_comments}) %>")
 $("textarea").val('')

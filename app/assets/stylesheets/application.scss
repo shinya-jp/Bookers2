@@ -15,6 +15,11 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.img{
+	display: block;
+}
+
 a {
 
   &:visited {
