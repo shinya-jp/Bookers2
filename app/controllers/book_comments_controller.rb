@@ -7,7 +7,7 @@ class BookCommentsController < ApplicationController
 		if @book_comment.save
 			render :index
 		else
-			render :index
+			redirect_back(fallback_location: root_path)
 		end
 	end
 
