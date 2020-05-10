@@ -5,8 +5,8 @@
 			<th>Title</th>
 			<th>Opinion</th>
 		</tr>
-</thead>
-<tbody>
+	</thead>
+	<tbody>
 	<% books.each do |book| %>
 	 	<tr>
 	 		<td><%= link_to user_path(book.user) do %>
@@ -26,4 +26,5 @@
 			</td>
 	  	</tr>
 	<% end %>
-</tbody>
+	</tbody>
+</table>

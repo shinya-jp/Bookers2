@@ -6,12 +6,32 @@
 
    <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "email" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :postcode %><br />
+    <%= f.text_field :postcode, autocomplete: "postcode" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prefecture_code %><br />
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, class: "都道府県" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :address_city, autocomplete: "address_city" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :street %><br />
+    <%= f.text_field :address_street, autocomplete: "address_street" %>
   </div>
 
   <div class="field">

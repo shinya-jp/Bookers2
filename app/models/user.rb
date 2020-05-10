@@ -46,6 +46,9 @@ class User < ApplicationRecord
        end
     end
   end
+# マップ表示
+  geocoded_by :address_city
+  after_validation :geocode
 #バリデーション
  validates :name, presence: true, length: {in: 2..20}
  validates :introduction, length:{ maximum: 50}
